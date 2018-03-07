@@ -9,6 +9,11 @@ int binary_tree_balance(const binary_tree_t *tree)
 {
 	int l_count, r_count;
 
+	if (tree == NULL)
+		return (0);
+	if (tree->left == NULL && tree->right == NULL)
+		return (0);
+
 	l_count = get_count(tree->left);
 	r_count = get_count(tree->right);
 	return (l_count - r_count);
