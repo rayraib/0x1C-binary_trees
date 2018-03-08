@@ -19,7 +19,6 @@ int binary_tree_is_perfect(const binary_tree_t *tree)
 		total += power(2, height);
 		height--;
 	}
-	printf("size- %lu", size);
 	if (tree->left == NULL && tree->right == NULL)
 		return (1);
 	if (size == (total + 1))
