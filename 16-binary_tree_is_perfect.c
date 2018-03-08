@@ -1,5 +1,5 @@
-#include <math.h>
 #include "binary_trees.h"
+
 size_t power(size_t number, size_t to_power);
 /**
  * binary_tree_is_perfect - function that checks if a binary tree is perfect
@@ -10,7 +10,7 @@ int binary_tree_is_perfect(const binary_tree_t *tree)
 {
 	size_t size, height, total = 0;
 
-	if (tree == NULL || (tree->left == NULL && tree->right == NULL))
+	if (tree == NULL)
 		return (0);
 	size = binary_tree_size(tree);
 	height = binary_tree_height(tree);
@@ -19,6 +19,9 @@ int binary_tree_is_perfect(const binary_tree_t *tree)
 		total += power(2, height);
 		height--;
 	}
+	printf("size- %lu", size);
+	if (tree->left == NULL && tree->right == NULL)
+		return (1);
 	if (size == (total + 1))
 		return (1);
 	else
